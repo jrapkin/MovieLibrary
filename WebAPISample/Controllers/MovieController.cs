@@ -40,7 +40,6 @@ namespace WebAPISample.Controllers
             }
             return Ok(movie);
         }
-
         // POST api/movie
         [HttpPost]
         public IActionResult Post([FromBody]Movie value)
@@ -48,16 +47,15 @@ namespace WebAPISample.Controllers
             // Create movie in db logic
             _context.Movies.Add(value);
             _context.SaveChanges();
-            return Ok();
+            return Ok(value);
         }
-
         // PUT api/movie
         [HttpPut]
         public IActionResult Put([FromBody] Movie movie)
         {
             _context.Movies.Update(movie);
             _context.SaveChanges();
-            return Ok();
+            return Ok(movie);
         }
         // DELETE api/movie/5
         [HttpDelete("{id}")]
@@ -69,5 +67,4 @@ namespace WebAPISample.Controllers
             return Ok();
         }
     }
-
 }
