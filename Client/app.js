@@ -54,7 +54,7 @@ function tableWithData(data)
                 <td> ${movie.title}  </td>
                  <td> ${movie.director} </td>
                  <td> ${movie.genre} </td> 
-                 <td> <button type='button' onclick='createForm("${movie.movieId}","${movie.title}","${movie.director}","${movie.genre}")'>Edit</button> 
+                 <td> <button type='button' onclick='createForm(${movie.movieId},"${movie.title}","${movie.director}","${movie.genre}")'>Edit</button> 
                  </td>
             </tr>`
         );
@@ -85,7 +85,7 @@ function deletem(id)
 function createForm(id,title,director,genre)
 {
 
-    document.getElementById("editForm").innerHTML = `<input class="form-control" id="editId" type="text" name="movieId" value = "${id}"/>
+    document.getElementById("editForm").innerHTML = `<input hidden id="editId" value = "${id}"/>
     <input class="form-control" id="editTitle" type="text" name="title" value = "${title}" placeholder="${title}"/>
     <input class="form-control" id="editDirector" type="text" name="director" value = "${director}" placeholder="${director}"/>
     <input class="form-control" id="editGenre" type="text" name="genre" value = "${genre}" placeholder="${genre}"/>
@@ -96,7 +96,7 @@ function createForm(id,title,director,genre)
 function editMovieDetails()
 {
     let movie = {
-        MovieId: $("#editId").val(),
+        MovieId: $("#editId").val()*1,
         Title : $("#editTitle").val(),
         Director: $("#editDirector").val(),
         Genre: $("#editGenre").val()
@@ -108,36 +108,10 @@ function editMovieDetails()
         type: 'put',
         contentType: 'application/json',
         data: JSON.stringify(movie),
-        success: (data) => 
-            {
-                alert("success")
-            },
+        success: (data) => {retrieveData(data)},
+        //populate the table, 
        error: (jqXhr, textStatus, errorThrown) => alert(errorThrown)
     });
-}
-function manualCall()
-{
-    let movie =
-    {
-        MovieId: "5",
-        Title: "test",
-        Director: "test",
-        Genre: "test"
-    };
-    $.ajax(
-        {
-            url:"https://localhost:44325/api/movie",
-            dataType: "json",
-            type: "put",
-            contentType: "application/json",
-            data: JSON.stringify(movie),
-            success: function(data, textStatus, jQxhr) {
-                $("#response pre").html(data);
-              },
-              error: function(jqXhr, textStatus, errorThrown) {
-                console.log(errorThrown);}        
-        });
-    
 }
 
 
