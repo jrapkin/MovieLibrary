@@ -53,6 +53,8 @@ namespace WebAPISample.Controllers
         [HttpPut]
         public IActionResult Put([FromBody] Movie movie)
         {
+            if(movie==null)
+            { return NotFound(); }
             _context.Movies.Update(movie);
             _context.SaveChanges();
             return Ok(movie);
