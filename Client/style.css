@@ -1,0 +1,25 @@
+button.btn-primary
+{
+    display: block;
+    margin: 0 auto;
+    background-color: #e67300;
+    font-size: large;
+    text-shadow: 1px 1px #000000;
+}
+container.table-primary
+{
+    margin: auto;
+    border: #e67300;
+    width: 600px;
+}
+#movieTable
+{
+    padding: 20px;
+    margin: 10px;
+
+}
+#my-form
+{
+    display: block;
+    margin: 0 auto;
+}

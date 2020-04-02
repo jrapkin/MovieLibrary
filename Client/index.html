@@ -3,9 +3,14 @@
 <head>
     <title>jQuery AJAX POST Form</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <button class="btn-primary" onclick="runApp()">Start</button>
+    <div class="row">
+        <button class="btn-primary" onclick="runApp()">Enter Movie Library</button>
+    </div>
+    
 
 <div class= "container">
     <table class="table table-sm">
@@ -24,13 +29,15 @@
     <pre></pre>
 </div>
 
-<form id="my-form">
-    <input type="text" name="title" placeholder="Title" />
-    <input type="text" name="director" placeholder="Director" />
-    <input type="text" name="genre" placeholder="Genre" />
-
-    <button type="submit">Submit</button>
-</form>
+<div class="row">
+    <form id="my-form">
+        <input type="text" name="title" placeholder="Title" />
+        <input type="text" name="director" placeholder="Director" />
+        <input type="text" name="genre" placeholder="Genre" />
+    
+        <button type="submit">Submit</button>
+    </form>
+</div>
 
 <div>
     <form id="editForm">
