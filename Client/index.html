@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="row">
-        <button class="btn-primary" onclick="runApp()">Enter Movie Library</button>
+        <button id="runButton" type="button" onclick="runApp()">Enter Movie Library</button>
     </div>
     
 
@@ -19,7 +19,6 @@
             <th>Director</th>
             <th>Genre</th>
             <th></th>
-            
         </tr>
         <tbody id="movieTable" class ="table "></tbody>
     </table>
@@ -35,10 +34,10 @@
 
 <div class="row">
     <form id="my-form">
-        <input type="text" name="title" placeholder="Title" />
+        <input id="titleBox"type="text" name="title" placeholder="Title" />
         <input type="text" name="director" placeholder="Director" />
         <input type="text" name="genre" placeholder="Genre" />
-        <button type="submit">Submit</button>
+        <button id="submitButton" type="submit">Submit</button>
     </form>
 </div>
 

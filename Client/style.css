@@ -1,8 +1,9 @@
-button.btn-primary
+#runButton
 {
     display: block;
     margin: 0 auto;
     background-color: #e67300;
+    color:white;
     font-size: large;
     text-shadow: 1px 1px #000000;
 }
@@ -17,6 +18,7 @@ button.btn-primary
 {
     display: block;
     margin: 0 auto;
+    color: #e67300;
 }
 h1
 {
@@ -38,13 +40,44 @@ h1
 }
 .table.table
 {
-    background-color: #4db8ff;
+    background-color: #424950;
+    color: #e67300;
 }
 #movieTable
 {
-    background-color: #ffbf80;
+    color: #e67300;
+    background-color: #424950;
 }
 body
 {
     background-color: #424950;
+}
+#submitButton
+{
+    background-color: #e67300;
+    color: white;
+
+}
+#submitEdits
+{
+    color: white;
+    background-color: #e67300;
+    margin: 8px;
+}
+#editButton
+{
+    color: white;
+    background-color: #e67300;
+}
+#editGenre
+{
+    margin: 8px;
+}
+#editDirector
+{
+    margin: 8px;
+}
+#editTitle
+{
+    margin: 8px;
 }

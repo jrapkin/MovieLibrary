@@ -68,7 +68,7 @@ function tableWithData(data)
                 <td> ${movie.title}  </td>
                  <td> ${movie.director} </td>
                  <td> ${movie.genre} </td> 
-                 <td> <button type='button' onclick='createForm(${movie.movieId},"${movie.title}","${movie.director}","${movie.genre}")'>Edit</button> 
+                 <td> <button id='editButton' type='button' onclick='createForm(${movie.movieId},"${movie.title}","${movie.director}","${movie.genre}")'>Edit</button> 
                  </td>
             </tr>`
         );
@@ -81,12 +81,11 @@ editForm.style.alignContent = "center";
 
 function createForm(id,title,director,genre)
 {
-    document.getElementById("editHeader").innerHTML = '<h1> Edit Movie </h1>'
     document.getElementById("editForm").innerHTML = `<input hidden id="editId" value = "${id}"/>
     <input class="form-control" id="editTitle" type="text" name="title" value = "${title}" placeholder="${title}"/>
     <input class="form-control" id="editDirector" type="text" name="director" value = "${director}" placeholder="${director}"/>
     <input class="form-control" id="editGenre" type="text" name="genre" value = "${genre}" placeholder="${genre}"/>
-    <button type='button' onclick='editMovieDetails()'>Submit Changes</button>` 
+    <button id='submitEdits' type='button' onclick='editMovieDetails()'>Submit Changes</button>` 
 
 }
 
