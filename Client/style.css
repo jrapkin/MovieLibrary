@@ -6,19 +6,24 @@ button.btn-primary
     font-size: large;
     text-shadow: 1px 1px #000000;
 }
-container.table-primary
-{
-    margin: auto;
-    border: #e67300;
-    width: 600px;
-}
-#movieTable
-{
-    padding: 20px;
-    margin: 10px;
-
-}
 #my-form
+{
+    display: block;
+    margin: 0 auto;
+}
+#createHeader
+{
+    display: block;
+    margin: 0 auto;
+}
+h1
+{
+    font-size: 48px;
+    color: #e67300;
+    text-shadow: black;
+    text-align: center;
+}
+#editForm
 {
     display: block;
     margin: 0 auto;

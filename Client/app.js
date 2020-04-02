@@ -1,4 +1,14 @@
 "use strict"
+
+function addCss(CSSFile) {
+    var link = $("<link />",{
+      rel: "stylesheet",
+      type: "text/css",
+      href: CSSFile
+    })
+    $('head').append(link);
+ }
+
 function runApp()
 {
     retrieveData();
@@ -45,6 +55,9 @@ function retrieveData()
     })   
 }
 
+let movieTable = document.getElementById("movieTable");
+movieTable.style.
+
 function tableWithData(data)
 {   
     $('#movieTable').html('');
@@ -60,31 +73,14 @@ function tableWithData(data)
         );
     });
 }
-//<td> ${deleteButton()} </td>` +
-//add table column for edit button
-//add table column for delete
-//add column for image
-//<td> <button onclick='delete(${movie.id})'>Delete</button> </td>
 
-function edit(data)
-{
-
-    //let button = "<button class="btn-success btn-sm" value= "id">Edit</button>";
-    //now we have to make the rest of the edit form i guess
-    editMovieDetails(id);
-    $('#editForm').submit( createForm );
-}
-
-function deletem(id)
-{
-    //let button = "<button class="btn-success btn=sm" value= "id">Delete</button>";
-    //deleteMovie(id);
-    
-}
+let editForm = document.getElementById("editForm");
+editForm.style.width = "200px";
+editForm.style.alignContent = "center";
 
 function createForm(id,title,director,genre)
 {
-
+    document.getElementById("editHeader").innerHTML = '<h1> Edit Movie </h1>'
     document.getElementById("editForm").innerHTML = `<input hidden id="editId" value = "${id}"/>
     <input class="form-control" id="editTitle" type="text" name="title" value = "${title}" placeholder="${title}"/>
     <input class="form-control" id="editDirector" type="text" name="director" value = "${director}" placeholder="${director}"/>
@@ -115,17 +111,21 @@ function editMovieDetails()
 }
 
 
-function deleteMovie(movieId)
+function deleteMovie(id,title,director,genre)
 {
+    let movie 
+    {
+        id,title,director,genre
+    }
     $.ajax(   
     {
-        url: 'https://localhost:44325/api/movie/delete/' + movieId, 
+        url: 'https://localhost:44325/api/movie/delete/' + id, 
         type: 'delete',
-        contentType: 'json',
-        data: JSON.stringify(data),
+        contentType: 'application/json',
+        data: JSON.stringify(movie),
         success: (data) => 
         {
-            //should return to updated table with deleted movie?
+            retrieveData(data)
         },
         error: (data, textStatus, errorThrown) => alert(errorThrown)
     });
