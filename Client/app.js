@@ -56,7 +56,8 @@ function retrieveData()
 }
 
 let movieTable = document.getElementById("movieTable");
-movieTable.style.
+///movieTable.style.
+//<td> <button type='button' onclick='deleteMovie(${movie.movieId})'>Delete</button></td>
 
 function tableWithData(data)
 {   
@@ -111,18 +112,18 @@ function editMovieDetails()
 }
 
 
-function deleteMovie(id,title,director,genre)
+function deleteMovie(id)
 {
-    let movie 
-    {
-        id,title,director,genre
-    }
+    // let movie =
+    // {
+    //     MovieId: id*1
+    // }
     $.ajax(   
     {
         url: 'https://localhost:44325/api/movie/delete/' + id, 
         type: 'delete',
         contentType: 'application/json',
-        data: JSON.stringify(movie),
+        //data: JSON.stringify(id),
         success: (data) => 
         {
             retrieveData(data)

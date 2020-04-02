@@ -10,6 +10,8 @@ button.btn-primary
 {
     display: block;
     margin: 0 auto;
+    border-width: 2px;
+    border-color: blue;
 }
 #createHeader
 {
@@ -27,4 +29,22 @@ h1
 {
     display: block;
     margin: 0 auto;
+}
+#tableHeader
+{
+    margin-top: 10px;
+    color: #000099; 
+    
+}
+.table.table
+{
+    background-color: #4db8ff;
+}
+#movieTable
+{
+    background-color: #ffbf80;
+}
+body
+{
+    background-color: #424950;
 }
